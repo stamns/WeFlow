@@ -1,6 +1,6 @@
 # WeFlow
 
-WeFlow 是一个**完全本地**的微信聊天记录查看与分析工具，支持聊天检索、统计分析、群聊画像与年度报告。所有数据均在本地处理，不会上传到任何服务器。
+WeFlow 是一个**完全本地**的微信**实时**聊天记录查看、分析与导出工具。它可以实时获取你的微信聊天记录并将其导出，还可以根据你的聊天记录为你生成独一无二的分析报告
 
 ---
 
@@ -25,9 +25,12 @@ WeFlow 是一个**完全本地**的微信聊天记录查看与分析工具，支
 </a>
 </p>
 
+> [!TIP]
+> 如果导出聊天记录后，想深入分析聊天内容可以试试 [ChatLab](https://chatlab.fun/)
+
 ## 主要功能
 
-- 本地查看与搜索聊天记录
+- 本地实时查看聊天记录
 - 统计分析与群聊画像
 - 年度报告与可视化概览
 - 导出聊天记录为 HTML 等格式
@@ -35,7 +38,7 @@ WeFlow 是一个**完全本地**的微信聊天记录查看与分析工具，支
 
 ## 快速开始
 
-若你只想使用成品版本，可前往 Release 下载并解压运行。
+若你只想使用成品版本，可前往 Release 下载并安装。
 
 ## 面向开发者
 
@@ -76,7 +79,6 @@ WeFlow/
 │   └── services/         # 后端服务
 │       ├── chatService.ts      # 聊天数据服务
 │       ├── wcdbService.ts      # 数据库服务
-│       ├── decryptService.ts   # 解密服务
 │       └── ...
 ├── src/                   # React 前端
 │   ├── components/       # 通用组件
@@ -88,9 +90,27 @@ WeFlow/
 └── resources/            # 打包资源
 ```
 
-## 注意事项
+## 致谢
 
-- 仅支持 Windows 系统
-- 需要微信 4.x 版本
-- 所有数据仅在本地处理，不会上传到任何服务器
-- 请负责任地使用本工具，遵守相关法律法规
+- [miyu](https://github.com/ILoveBingLu/miyu) 为本项目提供了基础框架
+
+
+## Star History
+
+<a href="https://www.star-history.com/#hicccc77/WeFlow&type=date&legend=top-left">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=hicccc77/WeFlow&type=date&theme=dark&legend=top-left" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=hicccc77/WeFlow&type=date&legend=top-left" />
+   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=hicccc77/WeFlow&type=date&legend=top-left" />
+ </picture>
+</a>
+
+<div align="center">
+
+---
+
+**请负责任地使用本工具，遵守相关法律法规**
+
+我们总是在向前走，却很少有机会回头看看
+
+</div>
