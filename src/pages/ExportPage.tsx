@@ -155,6 +155,19 @@ function ExportPage() {
   }, [loadSessions, loadExportPath, loadExportDefaults])
 
   useEffect(() => {
+    const removeListener = window.electronAPI.export.onProgress?.((payload) => {
+      setExportProgress({
+        current: payload.current,
+        total: payload.total,
+        currentName: payload.currentSession
+      })
+    })
+    return () => {
+      removeListener?.()
+    }
+  }, [])
+
+  useEffect(() => {
     if (!searchKeyword.trim()) {
       setFilteredSessions(sessions)
       return
