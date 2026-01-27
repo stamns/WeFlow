@@ -1665,6 +1665,12 @@ class ExportService {
 
       const collected = await this.collectMessages(sessionId, cleanedMyWxid, options.dateRange)
       const allMessages = collected.rows
+
+      // 如果没有消息,不创建文件
+      if (allMessages.length === 0) {
+        return { success: false, error: '该会话在指定时间范围内没有消息' }
+      }
+
       if (isGroup) {
         await this.mergeGroupMembers(sessionId, collected.memberSet, options.exportAvatars === true)
       }
@@ -1858,6 +1864,12 @@ class ExportService {
       })
 
       const collected = await this.collectMessages(sessionId, cleanedMyWxid, options.dateRange)
+
+      // 如果没有消息,不创建文件
+      if (collected.rows.length === 0) {
+        return { success: false, error: '该会话在指定时间范围内没有消息' }
+      }
+
       const { exportMediaEnabled, mediaRootDir, mediaRelativePrefix } = this.getMediaLayout(outputPath, options)
 
       // ========== 阶段1：并行导出媒体文件 ==========
@@ -2100,6 +2112,10 @@ class ExportService {
 
       const collected = await this.collectMessages(sessionId, cleanedMyWxid, options.dateRange)
 
+      // 如果没有消息,不创建文件
+      if (collected.rows.length === 0) {
+        return { success: false, error: '该会话在指定时间范围内没有消息' }
+      }
 
       onProgress?.({
         current: 30,
@@ -2453,6 +2469,12 @@ class ExportService {
       })
 
       const collected = await this.collectMessages(sessionId, cleanedMyWxid, options.dateRange)
+
+      // 如果没有消息,不创建文件
+      if (collected.rows.length === 0) {
+        return { success: false, error: '该会话在指定时间范围内没有消息' }
+      }
+
       const sortedMessages = collected.rows.sort((a, b) => a.createTime - b.createTime)
 
       const { exportMediaEnabled, mediaRootDir, mediaRelativePrefix } = this.getMediaLayout(outputPath, options)
@@ -2624,6 +2646,12 @@ class ExportService {
       })
 
       const collected = await this.collectMessages(sessionId, cleanedMyWxid, options.dateRange)
+
+      // 如果没有消息,不创建文件
+      if (collected.rows.length === 0) {
+        return { success: false, error: '该会话在指定时间范围内没有消息' }
+      }
+
       if (isGroup) {
         await this.mergeGroupMembers(sessionId, collected.memberSet, options.exportAvatars === true)
       }
