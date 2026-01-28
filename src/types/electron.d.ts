@@ -365,6 +365,7 @@ export interface ExportOptions {
   txtColumns?: string[]
   sessionLayout?: 'shared' | 'per-session'
   displayNamePreference?: 'group-nickname' | 'remark' | 'nickname'
+  exportConcurrency?: number
 }
 
 export interface ExportProgress {
