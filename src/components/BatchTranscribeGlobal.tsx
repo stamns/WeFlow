@@ -15,6 +15,7 @@ export const BatchTranscribeGlobal: React.FC = () => {
     showToast,
     showResult,
     result,
+    sessionName,
     setShowToast,
     setShowResult
   } = useBatchTranscribeStore()
@@ -27,7 +28,7 @@ export const BatchTranscribeGlobal: React.FC = () => {
           <div className="batch-progress-toast-header">
             <div className="batch-progress-toast-title">
               <Loader2 size={14} className="spin" />
-              <span>批量转写中</span>
+              <span>批量转写中{sessionName ? `（${sessionName}）` : ''}</span>
             </div>
             <button className="batch-progress-toast-close" onClick={() => setShowToast(false)} title="最小化">
               <X size={14} />

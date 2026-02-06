@@ -1277,7 +1277,7 @@ function ChatPage(_props: ChatPageProps) {
     const session = sessions.find(s => s.username === currentSessionId)
     if (!session) return
 
-    startTranscribe(voiceMessages.length)
+    startTranscribe(voiceMessages.length, session.displayName || session.username)
 
     // 检查模型状态
     const modelStatus = await window.electronAPI.whisper.getModelStatus()
